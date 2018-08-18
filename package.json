@@ -1,0 +1,36 @@
+{
+  "name": "location-middleware",
+  "version": "1.0.0",
+  "description": "Getting the location URL of the current call in the request object",
+  "author": "Florian Barbare",
+  "repository": "fbarbare/location-middleware",
+  "bugs": {
+    "url": "https://github.com/fbarbare/location-middleware/issues"
+  },
+  "license": "MIT",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "test": "jest-run"
+  },
+  "dependencies": {
+    "qs": "^6.5.2"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "jest": "^23.5.0",
+    "jest-run": "^1.0.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "prettier-config-guestline": "^1.0.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json,ts,css,scss,sass,less,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

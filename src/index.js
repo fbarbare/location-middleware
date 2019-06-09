@@ -51,5 +51,18 @@ function expressLocation(req, res, next) {
   next();
 }
 
+function koaLocation() {
+  return function(ctx, next) {
+    const isHttps = ctx.headers['x-forwarded-proto'] === 'https' || request.secure;
+    const protocol = isHttps ? 'https:' : 'http:';
+    const location = getLocation(`${protocol}//${ctx.headers.host}${ctx.originalUrl}`);
+
+    defineProperty(req, 'location', location);
+
+    next();
+  };
+}
+
 exports.expressLocation = expressLocation;
+exports.koaLocation = koaLocation;
 exports.getLocation = getLocation;

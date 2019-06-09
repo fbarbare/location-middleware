@@ -1,6 +1,6 @@
 {
   "name": "location-middleware",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Getting the location URL of the current call in the request object",
   "author": "Florian Barbare",
   "repository": "fbarbare/location-middleware",
